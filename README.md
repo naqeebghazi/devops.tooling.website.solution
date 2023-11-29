@@ -15,3 +15,17 @@ This project implements the following components:
 A 3-tier architecture.
 Webservers treat the the storage and databse units as local systems to retrieve data from:
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/1.three-tierArchitecture.png?raw=true)
+
+Storage types:
+NFS, Block and Object storage.
+
+How do you know which storage system to use depends on:
+  - Data type
+  - Format type
+  - Data access
+  - Who/what will access the data
+  - From where will the data be accessed
+  - How frequently will the data be accessed
+
+## Implementing a business website using NFS for the backend file
+
