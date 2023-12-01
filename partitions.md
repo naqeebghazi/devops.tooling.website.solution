@@ -1,4 +1,4 @@
-#Partitions on Block Devices
+# Partitions on Block Devices
 
 ## Creating Partitions via  terminal:
 
