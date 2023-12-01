@@ -1,3 +1,81 @@
+#Partitions on Block Devices
+
+## Creating Partitions via  terminal:
+
+Creating partitions on an AWS EC2 instance involves several steps, including identifying the available block devices, using partitioning tools, and creating partitions of different sizes. Below is a general guide on how to create partitions with different sizes on an AWS EC2 instance:
+
+Important Note:
+Before proceeding, make sure to back up any important data on your instance. Creating partitions involves modifying the disk structure, and there is a risk of data loss if not done carefully.
+
+### Steps to Create Partitions:
+  
+1. Identify Block Devices:
+  
+Connect to your EC2 instance using SSH.
+  
+Use the lsblk command to identify the block devices available on your instance.
+  
+    lsblk
+  
+Identify the block device you want to partition (e.g., /dev/xvda).
+
+2. Partition the Block Device:
+
+Use a partitioning tool like fdisk to create partitions on the chosen block device.
+
+    sudo fdisk /dev/xvda
+
+Follow the prompts to create partitions. You can create multiple partitions with different sizes.
+
+3. Format Partitions:
+
+After creating partitions, use the mkfs command to format each partition with a filesystem.
+
+    sudo mkfs -t ext4 /dev/xvda1   # Replace /dev/xvda1 with the actual partition
+    sudo mkfs -t ext4 /dev/xvda2   # Replace /dev/xvda2 with another partition, if created
+
+Repeat this step for each partition.
+
+4. Create Mount Points:
+
+Create directories to serve as mount points for each partition.
+
+    sudo mkdir /mnt/partition1
+    sudo mkdir /mnt/partition2
+
+Adjust the directory names based on your preferences.
+
+5. Mount Partitions:
+
+Mount each partition to its corresponding mount point.
+
+    sudo mount /dev/xvda1 /mnt/partition1
+    sudo mount /dev/xvda2 /mnt/partition2
+
+Adjust the device names and mount points accordingly.
+
+6. Update /etc/fstab for Persistence:
+
+Add entries to the /etc/fstab file to ensure that the partitions are mounted automatically at boot.
+
+    echo "/dev/xvda1 /mnt/partition1 ext4 defaults 0 0" | sudo tee -a /etc/fstab
+    echo "/dev/xvda2 /mnt/partition2 ext4 defaults 0 0" | sudo tee -a /etc/fstab
+
+Adjust the device names, mount points, and filesystem types based on your configuration.
+
+7. Verify Configuration:
+
+Check the mounted partitions and their sizes.
+
+    df -h
+
+Verify that each partition is correctly mounted.
+
+By following these steps, you can create partitions of different sizes on your AWS EC2 instance. Adapt the commands and partition sizes based on your specific requirements.
+
+
+## Deleting Partitions:
+
 If you've created partitions using gdisk and want to remove them, you'll need to use the same tool to delete the partitions. Here's a step-by-step guide:
 
 Using gdisk to Remove Partitions:
