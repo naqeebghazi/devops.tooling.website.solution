@@ -19,6 +19,14 @@ Use the lsblk command to identify the block devices available on your instance.
   
 Identify the block device you want to partition (e.g., /dev/xvda).
 
+The mount command tells us what storage devices are mounted on our system:
+
+    $ mount  | grep xvd
+    
+We can use grep to narrow down the output for our devices
+
+ 
+
 2. Partition the Block Device:
 
 Use a partitioning tool like fdisk to create partitions on the chosen block device.
