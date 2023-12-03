@@ -31,3 +31,6 @@ How do you know which storage system to use depends on:
 
 Create a webserver + 3 EBS volumes: See LVM project for instrcutions
 
+Create 3 logical volumes, names lv-opt, lv-apps and lv-logs
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/lvcreate123.png?raw=true)
