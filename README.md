@@ -29,3 +29,5 @@ How do you know which storage system to use depends on:
 
 ## Implementing a business website using NFS for the backend file
 
+Create a webserver + 3 EBS volumes: See LVM project for instrcutions
+
