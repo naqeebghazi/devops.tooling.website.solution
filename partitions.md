@@ -1,4 +1,4 @@
-# Partitions on Block Devices
+# Partitions on Block Devices on Linux
 
 ## Creating Partitions via  terminal:
 
@@ -21,19 +21,29 @@ Identify the block device you want to partition (e.g., /dev/xvda).
 
 The mount command tells us what storage devices are mounted on our system:
 
-    $ mount  | grep xvd
+    mount | grep xvdb
     
 We can use grep to narrow down the output for our devices
 
- 
-
 2. Partition the Block Device:
 
+To completely wipe the disk and create a band new partition table on it:
+First unmount the disk
+
+    sudo umount /dev/xvdb  # umount is not a typo
+    mount | grep xvdb      # this to double check the disk is no longer listed and therefore has been unmounted
+    
 Use a partitioning tool like fdisk to create partitions on the chosen block device.
 
     sudo fdisk /dev/xvda
 
 Follow the prompts to create partitions. You can create multiple partitions with different sizes.
+
+  p - prints current partition table
+  m - helpful cmd list
+  g - creates a gpt type partition table (default)
+  n - new partition table process
+  
 
 3. Format Partitions:
 
