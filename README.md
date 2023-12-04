@@ -152,6 +152,8 @@ Check NFS ports and configure Security Groups by adding a new Inbound Rule:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/rpcinfo-p.png?raw=true)
 
+Inbound rules:
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/inboundRules.png?raw=true)
 
- 
+
 
