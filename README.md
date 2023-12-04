@@ -171,9 +171,11 @@ MySQL database setup on DB server:
 
 
 DB security group. The SG allows inbound access from the WebServers private IP. They are both on the same VPC so can connect to each others private IP:
+
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/DBsecuritygroup.png?raw=true)
 
 Mount NFS
+
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/mountNFS_ws2.png?raw=true)
 
 Edit /etc/fstab to persist NFS server info in the Webserver even after rebott:
