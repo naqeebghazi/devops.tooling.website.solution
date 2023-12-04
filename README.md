@@ -125,7 +125,7 @@ Updated listed blockl devices configuration:
     sudo systemctl status nfs-server.service
 
 
-Then fix the permissions:
+Fix the permissions. This will allow the WebSErver to read, write, execute files on NFS:
 
     sudo chown -R nobody: /mnt/apps
     sudo chown -R nobody: /mnt/logs
