@@ -161,3 +161,10 @@ DB Server storage setup:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/DBserverBlockSetup.png?raw=true)
 
+Setup of MySQL:
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/MySQLstatus.png?raw=true)
+
+
+
+
