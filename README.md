@@ -170,7 +170,7 @@ MySQL database setup on DB server:
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/mysqlToolingSetup.png?raw=true)
 
 
-DB security group:
+DB security group. The SG allows inbound access from the WebServers private IP. They are both on the same VPC so can connect to each others private IP:
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/DBsecuritygroup.png?raw=true)
 
 
