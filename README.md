@@ -1,4 +1,4 @@
- # devops.tooling.website.solution
+# devops.tooling.website.solution
 Build a comprehensive devops tooling website solution.
 
 You will implement a tooling website solutio which makes access to DevOps tools within the corporate infrastructure easily accesisble. 
@@ -144,7 +144,7 @@ Edit the /ect/exports text file to configure the files systems by adding the /32
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/etc.Exports.png?raw=true)
 
 Export the the list of file system (/etc/exports) to allow client access to NFS.  
-![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/exportFS.png?raw=true)
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/exportfs*.png?raw=true)
 
 Check NFS ports and configure Security Groups by adding a new Inbound Rule:
 
