@@ -157,3 +157,7 @@ Inbound rules:
 
 
 
+DB Server storage setup:
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/DBserverBlockSetup.png?raw=true)
+
