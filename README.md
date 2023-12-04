@@ -170,5 +170,8 @@ MySQL database setup on DB server:
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/mysqlToolingSetup.png?raw=true)
 
 
+DB security group:
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/DBsecuritygroup.png?raw=true)
+
 
 
