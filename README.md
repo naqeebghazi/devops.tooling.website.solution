@@ -1,4 +1,4 @@
-# devops.tooling.website.solution
+ # devops.tooling.website.solution
 Build a comprehensive devops tooling website solution.
 
 You will implement a tooling website solutio which makes access to DevOps tools within the corporate infrastructure easily accesisble. 
@@ -109,6 +109,9 @@ Run this to test the configuration. Nothing returned = success:
 
     $ sudo mount -a
 
+Updated listed blockl devices configuration:
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/lsblk2.png?raw=true)
 
 ### Setup NFS Server
 
