@@ -95,13 +95,16 @@ Update /etc/fstab. This persists the mount configuration even after restart.
     $ sudo blkid 
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/blkid.png?raw=true)
+
 Copy the UUIDs of the mapper files.
 
 Edit /etc/fstab as follows in this format:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/fstab.png?raw=true)
 
-Run df -h to validate changes:
+Run this to validate changes:
+
+    df -h 
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/df-h_AFTERmounting_all_3.png?raw=true)
 
@@ -134,6 +137,21 @@ Then fix the permissions:
     
     sudo systemctl restart nfs-server.service
 
+Edit the /ect/exports text file to configure the files systems by adding the /32 subnet to each mount point as below:
+
+    sudo vi /etc/exports
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/etc.Exports.png?raw=true)
+
+Export the the list of file system (/etc/exports) to allow client access to NFS.  
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/exportFS.png?raw=true)
+
+Check NFS ports and configure Security Groups by adding a new Inbound Rule:
+
+    rpcinfo -p | grep nfs
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/rpcinfo-p.png?raw=true)
 
 
+ 
 
