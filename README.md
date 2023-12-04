@@ -174,6 +174,9 @@ DB security group. The SG allows inbound access from the WebServers private IP. 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/DBsecuritygroup.png?raw=true)
 
 Mount NFS
-![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/mountNFS.png?raw=true)
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/mountNFS_ws2.png?raw=true)
 
+Edit /etc/fstab to persist NFS server info in the Webserver even after rebott:
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/WS_persistNFSIP_fstab.png?raw=true)
 
