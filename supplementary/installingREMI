@@ -1,0 +1,162 @@
+HOW TO ENABLE REMI REPO ON CENTOS 7, 6 AND 5
+Sawiyati | September 27th, 2015 | How To | 3 Comments
+ads by BSA
+This article will guide you how to install and enable REMI (by Remi Collect) repository (repo) on your CentOS server. And that’s including CentOS 7.x, CentOS 6.x and CentOS 5.x but you can also apply the steps on RHEL, Scientific Linux or Fedora. Before we proceed, it is better to firstly get to know what is Remi repo?
+
+
+What is Remi Repository?
+
+
+It is a third-party repository created and maintained by a French guy called Remi Collect as his “little” contribution to the free community. The main purpose of Remi Repo is providing the latest versions of the PHP stack, full featured, and some other software, to the Fedora and Enterprise Linux (RHEL, CentOS, Oracle, Scientific Linux, …) users. The repository mainly contains:
+
+
+packages Remi also maintains in Fedora
+backports of packages available in Fedora development version
+some packages incompatible with Fedora policy
+some packages in progress before being submitted to Fedora repository
+(nearly) vanilla versions
+the repo is quite away from backporting fixes policy of Enterprise Linux.
+Get it? Still hard to understand? In much simpler way, Remi repository is a free repository providing many cutting edge latest versions of software which are not available in your CentOS installation and or repository by default. For example, if you want to install latest version of PHP, then you can get it via Remi repo.
+
+Remi repo is versy stable, free and popular. So do not hesitate to add the repo into your server’s repo list and here’s how you can get it done. Important notice: you should and have to use REMI repository along with EPEL repository. Otherwise you may end up with dependency problem in many cases.
+
+Also read:
+How to install and enable EPEL Repo on CentOS 7
+
+HOW TO INSTALL REMI REPO
+Step 1 – Login to your server as root or as a user with root privilege (sudo) via your favorite SSH client like Putty, Terminal, BitVisa, etc.
+
+Step 2 – Now download the .rpm file using wget command. Make sure you download the correct version for your CentOS version:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+# For CentOS/RHEL/Scientific Linux 7 x86_64 #
+wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+ 
+# For CentOS/RHEL/Scientific Linux 6 i386 or x86_64 #
+wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+ 
+# For CentOS/RHEL/Scientific Linux 5 i386 or x86_64 #
+wget http://rpms.famillecollet.com/enterprise/remi-release-5.rpm
+ 
+# For Fedora 20 i386 or x86_64 #
+wget http://rpms.famillecollet.com/remi-release-20.rpm
+ 
+# For Fedora 19  i386 or x86_64 #
+wget http://rpms.famillecollet.com/remi-release-19.rpm
+ 
+# For Fedora 18  i386 or x86_64 #
+wget http://rpms.famillecollet.com/remi-release-18.rpm
+Step 3 – Finally, you can install it using RPM command:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+# For CentOS/RHEL/Scientific Linux 7 x86_64 #
+rpm -Uvh remi-release-7.rpm
+ 
+# For CentOS/Scientific Linux 6 i386 or x86_64 #
+rpm -Uvh remi-release-6.rpm
+ 
+# For RHEL 6 i386 or x86_64 #
+rhn-channel --add --channel=rhel-$(uname -i)-server-optional-6
+ 
+# For CentOS/RHEL/Scientific Linux 5 i386 or x86_64 #
+rpm -Uvh remi-release-5.rpm
+ 
+# For Fedora 20 i386 or x86_64 #
+yum install remi-release-20.rpm
+ 
+# For Fedora 19  i386 or x86_64 #
+yum install remi-release-19.rpm
+ 
+# For Fedora 18  i386 or x86_64 #
+yum install remi-release-18.rpm
+Step 4 – Now you have to also verify that the REMI repository is already installed successfully and ready to use:
+
+1
+yum repolist
+HOW TO ENABLE AND USE REMI REPO
+The easy and instant way can be done using this command:
+
+1
+yum --enablerepo=remi [command] [package name]
+Replace the [command] part with one of these:
+
+– install
+– update
+– check-update
+– upgrade
+– remove or erase
+– list
+– provides or whatprovides
+– search
+– info
+– clean
+– shell
+– resolvedep
+– localinstall
+– localupdate
+– deplist
+
+or, alternatively you can also enable Remi repo using these steps:
+
+Step 1 – Edit the remi.repo file using your favorite text editor like vi or Nano:
+
+1
+nano /etc/yum.repos.d/remi.repo
+Step 2 – Find the line enabled = 0 and change it to 1 to enable REMI repository:
+
+1
+2
+3
+[...]
+enabled=1
+[...]
+Step 3 – Now save that file and close it. In Nano it is Control+O then Control+X.
+
+Step 4 – Then issue the yum repolist command again to double check it:
+
+1
+yum repolist
+Step 5 – You can now use usual yum command to install, update or delete any package.
+
+1
+yum [command] [package name]
+for example:
+
+1
+yum install php
+That is it. Catch all other tutorials about CentOS here.
