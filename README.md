@@ -218,4 +218,4 @@ Enter the following into the WebServer2:
     sudo systemctl enable php-fpm
     setsebool -P httpd_execmem 1
 
-
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/php-enable-systemctl.png?raw=true)
