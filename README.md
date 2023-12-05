@@ -94,8 +94,6 @@ Update /etc/fstab. This persists the mount configuration even after restart.
 
     $ sudo blkid 
 
-![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/blkid.png?raw=true)
-
 Copy the UUIDs of the mapper files.
 
 Edit /etc/fstab as follows in this format:
