@@ -180,6 +180,32 @@ Edit /etc/fstab to persist NFS server info in the Webserver even after rebott:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/WS_persistNFSIP_fstab.png?raw=true)
 
+## Setup the Additional Webservers
+
+Create another EC2 instance with RHEL.
+
+Install the NFS client:
+
+    sudo yum install nfs-utils nfs4-acl-tools -y
+
+Mount /var/www/ and target the NFS server's export for apps
+
+    sudo mkdir /var/www
+    sudo mount -t nfs -o rw,nosuid <NFS-Server-Private-IP-Address>:/mnt/apps /var/www
+
+Verifu successful NFS mount:
+
+    df -h
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/Screenshot%202023-12-05%20at%2010.43.53.png?raw=true)
+
+To ensure this persists after reboot, edit /ect/fstab as follows:
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/fstabWebserver2.png?raw=true)
+
+
+
+
 Enter the following into the WebServer2:
 
     sudo yum install httpd -y
