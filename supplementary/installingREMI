@@ -1,13 +1,17 @@
 HOW TO ENABLE REMI REPO ON CENTOS 7, 6 AND 5
 Sawiyati | September 27th, 2015 | How To | 3 Comments
 ads by BSA
-This article will guide you how to install and enable REMI (by Remi Collect) repository (repo) on your CentOS server. And that’s including CentOS 7.x, CentOS 6.x and CentOS 5.x but you can also apply the steps on RHEL, Scientific Linux or Fedora. Before we proceed, it is better to firstly get to know what is Remi repo?
+This article will guide you how to install and enable REMI (by Remi Collect) repository (repo) on your CentOS server. 
+And that’s including CentOS 7.x, CentOS 6.x and CentOS 5.x but you can also apply the steps on RHEL, Scientific Linux or Fedora. 
+Before we proceed, it is better to firstly get to know what is Remi repo?
 
 
 What is Remi Repository?
 
 
-It is a third-party repository created and maintained by a French guy called Remi Collect as his “little” contribution to the free community. The main purpose of Remi Repo is providing the latest versions of the PHP stack, full featured, and some other software, to the Fedora and Enterprise Linux (RHEL, CentOS, Oracle, Scientific Linux, …) users. The repository mainly contains:
+It is a third-party repository created and maintained by a French guy called Remi Collect as his “little” contribution to the free community. 
+The main purpose of Remi Repo is providing the latest versions of the PHP stack, full featured, and some other software, 
+to the Fedora and Enterprise Linux (RHEL, CentOS, Oracle, Scientific Linux, …) users. The repository mainly contains:
 
 
 packages Remi also maintains in Fedora
@@ -16,9 +20,13 @@ some packages incompatible with Fedora policy
 some packages in progress before being submitted to Fedora repository
 (nearly) vanilla versions
 the repo is quite away from backporting fixes policy of Enterprise Linux.
-Get it? Still hard to understand? In much simpler way, Remi repository is a free repository providing many cutting edge latest versions of software which are not available in your CentOS installation and or repository by default. For example, if you want to install latest version of PHP, then you can get it via Remi repo.
+Get it? Still hard to understand? In much simpler way, Remi repository is a free repository providing 
+many cutting edge latest versions of software which are not available in your CentOS installation and or repository by default. 
+For example, if you want to install latest version of PHP, then you can get it via Remi repo.
 
-Remi repo is versy stable, free and popular. So do not hesitate to add the repo into your server’s repo list and here’s how you can get it done. Important notice: you should and have to use REMI repository along with EPEL repository. Otherwise you may end up with dependency problem in many cases.
+Remi repo is versy stable, free and popular. 
+So do not hesitate to add the repo into your server’s repo list and here’s how you can get it done. 
+Important notice: you should and have to use REMI repository along with EPEL repository. Otherwise you may end up with dependency problem in many cases.
 
 Also read:
 How to install and enable EPEL Repo on CentOS 7
