@@ -197,7 +197,9 @@ Verifu successful NFS mount:
 
     df -h
 
-![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/Screenshot%202023-12-05%20at%2010.43.53.png?raw=true)
+  df -h on all 3 webservers showing mounted files:
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/all3webservers.df-h.png?raw=true)
 
 To ensure this persists after reboot, edit /ect/fstab as follows:
 
@@ -219,3 +221,9 @@ Enter the following into the WebServer2:
     sudo setsebool -P httpd_execmem 1
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/php-enable-systemctl.png?raw=true)
+
+All 3 webserver with php-fpm enabled:
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/php-fpm_onall3servers.png?raw=true)
+
+
