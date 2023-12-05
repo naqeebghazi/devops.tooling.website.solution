@@ -226,4 +226,11 @@ All 3 webserver with php-fpm enabled:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/php-fpm_onall3servers.png?raw=true)
 
+All three webservers should now be in sync with the nFS server. To test this, create a est file in one of the 3 webservers and then check teh the same file location in the NFS server as well as the other webservers:
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/sudoTouchtest.png?raw=true)
+
+Success!
+
+
 
