@@ -180,3 +180,16 @@ Edit /etc/fstab to persist NFS server info in the Webserver even after rebott:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/WS_persistNFSIP_fstab.png?raw=true)
 
+Enter the following into the WebServer2:
+
+    sudo yum install httpd -y
+    sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+    sudo dnf install -y dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    sudo dnf module reset php
+    sudo dnf module enable php:remi-7.4
+    sudo dnf install php php-opcache php-gd php-curl php-mysqlnd
+    sudo systemctl start php-fpm
+    sudo systemctl enable php-fpm
+    setsebool -P httpd_execmem 1
+
+
