@@ -180,7 +180,7 @@ Edit /etc/fstab to persist NFS server info in the Webserver even after rebott:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/WS_persistNFSIP_fstab.png?raw=true)
 
-## Setup the Additional Webservers
+## Setup the Additional Webservers (3 in total, not including NFS server)
 
 Create another EC2 instance with RHEL.
 
@@ -205,9 +205,6 @@ To ensure this persists after reboot, edit /ect/fstab as follows:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/fstabWebserver2.png?raw=true)
 
-
-
-
 Enter the following into the WebServer2:
 
     sudo yum install httpd -y
@@ -226,11 +223,52 @@ All 3 webserver with php-fpm enabled:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/php-fpm_onall3servers.png?raw=true)
 
-All three webservers should now be in sync with the nFS server. To test this, create a est file in one of the 3 webservers and then check teh the same file location in the NFS server as well as the other webservers:
+All three webservers should now be in sync with the NFS server. To test this, create a est file in one of the 3 webservers and then check the the same file location in the NFS server as well as the other webservers:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/sudoTouchtest.png?raw=true)
 
 Success!
+
+In each webserver, install git:
+
+    sudo yum install -y git-all
+    
+Now, fork this repo into one of the Webservers:
+
+    https://github.com/darey-io/tooling
+
+Copy the html file in it to /var/www/html
+
+    cd dareytooling
+    sudo cp ./html /var/www/html/
+
+Check apache is running:
+
+    sudo systemctl status httpd
+
+If it is not, restart it:
+
+    sudo systemctl enable httpd
+    sudo systemctl start httpd
+    sudo systemctl status httpd
+
+If you are getting errors disable SElinux:
+
+    sudo setenforce 0
+    sudo vi /etc/sysconfig/selinux
+
+    # set SELINUX=disabled
+
+    sudo systemctl restart httpd
+    sudo systemctl status httpd
+
+Then check on the browser via the public IP:
+
+    wget -qO- ifconfig.me
+
+Browser to show httpd is running:
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/httpdBrpwser.png?raw=true)
 
 
 
