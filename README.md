@@ -270,5 +270,7 @@ Browser to show httpd is running:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/httpdBrpwser.png?raw=true)
 
+Login page for one of the 3 webservers:
 
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/Screenshot%202023-12-07%20at%2015.17.53.png?raw=true)
 
