@@ -144,6 +144,10 @@ Edit the /ect/exports text file to configure the files systems by adding the /32
 Export the the list of file system (/etc/exports) to allow client access to NFS.  
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/exportfs*.png?raw=true)
 
+Then 
+
+    sudo exportfs -arv
+
 Check NFS ports and configure Security Groups by adding a new Inbound Rule:
 
     rpcinfo -p | grep nfs
