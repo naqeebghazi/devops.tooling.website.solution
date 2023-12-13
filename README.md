@@ -33,7 +33,12 @@ Create a webserver + 3 EBS volumes: See LVM project for instrcutions
 
 Create 3 logical volumes, names lv-opt, lv-apps and lv-logs
 
-![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/lvcreate123.png?raw=true)
+    sudo lvcreate -n lv-apps -L 9G webdata-vg
+    sudo lvcreate -n lv-opt -L 9G webdata-vg
+    sudo lvcreate -n lv-logs -L 9G webdata-vg
+
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/vgdisplayofAll3webseversAFTERlvcreate.png?raw=true)
 
 Validate setup of VG, PG and LV:
 
