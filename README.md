@@ -12,6 +12,9 @@ This project implements the following components:
   - Programming Language
   - Code Repository: GitHub
 
+RHEL AMI image:
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/RHELamiImage.png?raw=true)
+
 A 3-tier architecture.
 Webservers treat the the storage and databse units as local systems to retrieve data from:
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/1.three-tierArchitecture.png?raw=true)
