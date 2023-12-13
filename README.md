@@ -81,14 +81,14 @@ Backup all the files in the /var/log directory into the /home/recovery/logs
 
     $ sudo rsync -av /var/log/. /home/recovery/logs/
 
-Mount the /mnt/log directory on the lv-logs logical volume:
+Mount the /mnt/logs directory on the lv-logs logical volume:
 
-    $ sudo mount /dev/webdata-vg/lv-logs /mnt/log
+    $ sudo mount /dev/webdata-vg/lv-logs /mnt/logs
     $ sudo systemctl daemon-reload
 
 Restore log files back into /var/log directory:
 
-    $ sudo rsync -av /home/recovery/logs/. /mnt/log
+    $ sudo rsync -av /home/recovery/logs/. /mnt/logs
 
 Update /etc/fstab. This persists the mount configuration even after restart.
 
