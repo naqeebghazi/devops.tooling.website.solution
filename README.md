@@ -153,6 +153,8 @@ Then
 
     sudo exportfs -arv
 
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/exportFS.png?raw=true)
+
 Check NFS ports and configure Security Groups by adding a new Inbound Rule:
 
     rpcinfo -p | grep nfs
