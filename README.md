@@ -77,30 +77,29 @@ Create mount points on /mnt directory for the logical volumes as follows:
 
 Create /home/recovery/logs to store backup of log data:
 
-    $ sudo mkdir -p /home/recovery/logs
+    sudo mkdir -p /home/recovery/logs
 
 The mount command tells us what storage devices are mounted on our system:
 
-    $ mount  | grep xvd
+    mount  | grep xvd
 
 We can use grep to narrow down the output for our devices
 
 Backup all the files in the /var/log directory into the /home/recovery/logs
 
-    $ sudo rsync -av /var/log/. /home/recovery/logs/
+    sudo rsync -av /var/log/. /home/recovery/logs/
 
-Mount the /mnt/logs directory on the lv-logs logical volume:
+Reload to confirm the config:
 
-    $ sudo mount /dev/webdata-vg/lv-logs /mnt/logs
-    $ sudo systemctl daemon-reload
+    sudo systemctl daemon-reload
 
 Restore log files back into /var/log directory:
 
-    $ sudo rsync -av /home/recovery/logs/. /mnt/logs
+    sudo rsync -av /home/recovery/logs/. /var/logs
 
 Update /etc/fstab. This persists the mount configuration even after restart.
 
-    $ sudo blkid 
+    sudo blkid 
 
 Copy the UUIDs of the mapper files.
 
@@ -116,7 +115,7 @@ Run this to validate changes:
 
 Run this to test the configuration. Nothing returned = success:
 
-    $ sudo mount -a
+    sudo mount -a
 
 Updated listed blockl devices configuration:
 
