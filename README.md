@@ -168,7 +168,15 @@ Inbound rules:
 
 
 
-DB Server storage setup:
+## DB Server storage setup:
+
+Install MySQL on Ubuntu:
+
+    sudo apt update
+    sudo apt install -y mysql-server
+    sudo systemctl start mysql.service
+    sudo systemctl status mysql.service
+        
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/DBserverBlockSetup.png?raw=true)
 
