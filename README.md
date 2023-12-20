@@ -178,8 +178,6 @@ Install MySQL on Ubuntu:
     sudo systemctl status mysql.service
         
 
-#![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/DBserverBlockSetup.png?raw=true#)
-
 Configure the DB to work with Wordpress
 
     sudo mysql
