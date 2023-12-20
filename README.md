@@ -54,9 +54,9 @@ Format the LVs to xfs:
     sudo mkfs -t xfs /dev/webdata-vg/lv-opt
     sudo mkfs -t xfs /dev/webdata-vg/lv-logs
 
-#![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/sudomkfs.xfs.png?raw=true)
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/sudomkfs.xfs.png?raw=true)
 
-#![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/formatXFSsuccess.png?raw=true)
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/formatXFSsuccess.png?raw=true)
 
 After formatting, you can mount the XFS-formatted logical volume to a directory to start using it. 
 
@@ -178,15 +178,7 @@ Install MySQL on Ubuntu:
     sudo systemctl status mysql.service
         
 
-![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/DBserverBlockSetup.png?raw=true)
-
-Setup of MySQL on DB server:
-
-![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/MySQLstatus.png?raw=true)
-
-MySQL database setup on DB server:
-
-![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/mysqlToolingSetup.png?raw=true)
+#![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/DBserverBlockSetup.png?raw=true)
 
 Configure the DB to work with Wordpress
 
@@ -197,6 +189,14 @@ Configure the DB to work with Wordpress
     FLUSH PRIVILEGES;
     SHOW DATABASES;
     exit
+
+Setup of MySQL on DB server:
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/MySQLstatus.png?raw=true)
+
+MySQL database setup on DB server:
+
+![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/mysqlToolingSetup.png?raw=true)
 
 ![](https://github.com/naqeebghazi/lvm.wordpress.website/blob/main/images2/db-mysql%20setup.png?raw=true)
 
