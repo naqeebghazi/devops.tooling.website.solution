@@ -188,6 +188,37 @@ MySQL database setup on DB server:
 
 ![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/mysqlToolingSetup.png?raw=true)
 
+Configure the DB to work with Wordpress
+
+    sudo mysql
+    CREATE DATABASE wordpress;
+    CREATE USER `myuser`@`<Web-Server-Private-IP-Address>` IDENTIFIED BY 'mypass';
+    GRANT ALL ON wordpress.* TO 'myuser'@'<Web-Server-Private-IP-Address>';
+    FLUSH PRIVILEGES;
+    SHOW DATABASES;
+    exit
+
+![](https://github.com/naqeebghazi/lvm.wordpress.website/blob/main/images2/db-mysql%20setup.png?raw=true)
+
+Configure Wordpress to connect to remote DB.
+Open MySQL port 3306 on DB server via your security groups. Only allow access to DB server via your Webserver's IP address. In the inbound rules configuration of the SG, specify source as /32
+
+Install MySQL client on the Webserver and see if you can connect your Webserver to the DB by using the mysql-client:
+
+    sudo yum -y install mysql
+    sudo mysql -u myuser -p -h 172.31.37.94
+
+![](https://github.com/naqeebghazi/lvm.wordpress.website/blob/main/images2/WS-DB.mysqlcxn.png?raw=true)
+
+Security groups should be as follows:
+
+  Web Server:
+    Outbound rules: All Traffic 
+    Inbound rules: All Traffic
+  
+  MySQL DB Server:
+    Outbound rules: None required
+    Inbound rules: MySQL/Aurora, port 3306, IPv4, IP Address of WebServer
 
 DB security group. The SG allows inbound access from the WebServers private IP. They are both on the same VPC so can connect to each others private IP:
 
