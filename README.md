@@ -54,9 +54,9 @@ Format the LVs to xfs:
     sudo mkfs -t xfs /dev/webdata-vg/lv-opt
     sudo mkfs -t xfs /dev/webdata-vg/lv-logs
 
-![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/sudomkfs.xfs.png?raw=true)
+#![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/sudomkfs.xfs.png?raw=true)
 
-![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/formatXFSsuccess.png?raw=true)
+#![](https://github.com/naqeebghazi/devops.tooling.website.solution/blob/main/images/formatXFSsuccess.png?raw=true)
 
 After formatting, you can mount the XFS-formatted logical volume to a directory to start using it. 
 
